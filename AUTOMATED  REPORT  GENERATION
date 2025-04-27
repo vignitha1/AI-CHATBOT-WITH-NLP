@@ -1,0 +1,67 @@
+import pandas as pd
+from fpdf import FPDF
+
+# Step 1: Create sample data (if file doesn't exist)
+def create_sample_data(filename):
+    data = {
+        'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+        'Sales': [2500, 3000, 2200, 2700],
+        'Region': ['North', 'South', 'East', 'West']
+    }
+    df = pd.DataFrame(data)
+    df.to_csv(filename, index=False)
+    print(f"📁 Sample data created in '{filename}'.")
+
+# Step 2: Read data from CSV
+def read_data(filename):
+    try:
+        df = pd.read_csv(filename)
+        return df
+    except FileNotFoundError:
+        print(f"❌ File '{filename}' not found.")
+        return None
+
+# Step 3: Analyze data (summary statistics)
+def analyze_data(df):
+    summary = df['Sales'].describe()
+    total_sales = df['Sales'].sum()
+    average_sales = df['Sales'].mean()
+    return summary, total_sales, average_sales
+
+# Step 4: Generate PDF report using FPDF
+def generate_pdf_report(summary, total_sales, average_sales, filename="sales_report.pdf"):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+
+    # Title
+    pdf.set_font("Arial", 'B', 16)
+    pdf.cell(200, 10, "Sales Report", ln=True, align="C")
+
+    # Summary section
+    pdf.set_font("Arial", size=12)
+    pdf.ln(10)
+    pdf.cell(200, 10, f"Total Sales: ${total_sales:.2f}", ln=True)
+    pdf.cell(200, 10, f"Average Sales: ${average_sales:.2f}", ln=True)
+
+    pdf.ln(10)
+    pdf.cell(200, 10, "Sales Summary Statistics:", ln=True)
+    for stat, value in summary.items():
+        pdf.cell(200, 10, f"{stat}: {value:.2f}", ln=True)
+
+    # Save the PDF
+    pdf.output(filename)
+    print(f"✅ Report generated and saved as '{filename}'.")
+
+# Main execution
+def main():
+    data_file = "sales_data.csv"
+    create_sample_data(data_file)
+
+    df = read_data(data_file)
+    if df is not None:
+        summary, total, average = analyze_data(df)
+        generate_pdf_report(summary, total, average)
+
+if _name_ == "_main_":
+    main()
