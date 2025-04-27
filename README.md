@@ -23,6 +23,8 @@ This internship gave me a valuable opportunity to bridge the gap between theoret
 
 ![Image](https://github.com/user-attachments/assets/00dab7ab-aeb0-4d78-a247-4386e26c88ec)
 
+![Image](https://github.com/user-attachments/assets/86f44c60-2988-44c2-a3bd-b527e6c2d6fc)
+
 
 
 
