@@ -17,6 +17,11 @@ I worked on Automated Report Generation using Python, where the focus was on ext
 I have involved in Machine Learning Model Implementation using Python, where the objective was to develop, train, and evaluate predictive models on real-world datasets. I used libraries like scikit-learn for building classification, regression, and clustering models, and Pandas and NumPy for data preprocessing and feature engineering. For model evaluation and visualization, I utilized Matplotlib and Seaborn to plot confusion matrices, learning curves, and feature importance graphs. In some advanced tasks.The key fields I worked on included data preprocessing, model building, model evaluation, and hyperparameter tuning, helping bridge the gap between theoretical knowledge and practical machine learning applications.
 This internship gave me a valuable opportunity to bridge the gap between theoretical knowledge and real-world applications. It enhanced my technical expertise in API integration and data visualization, and prepared me for future professional challenges in the field of data analytics and software development.
 
+*OUTPUT* :
+
+![Image](https://github.com/user-attachments/assets/85be6cb4-f4f5-40f4-afa6-d4e4b286a066)
+
+
 
 
 
